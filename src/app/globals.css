@@ -3,24 +3,49 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  /* CSS variables used by coworker comparison styles */
+  --primary-white: #ffffff;
+  --primary-black: #0f172a;
+  --ts-blue: #1d4ed8;
+  --gray-50: #f9fafb;
+  --gray-200: #e5e7eb;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 999px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.08);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.10);
+  --transition-fast: 120ms ease;
+  --transition-base: 180ms ease;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  /* Ensure Tailwind's font-sans resolves to Times New Roman site-wide */
+  --font-sans: "Times New Roman", Times, serif;
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-brand-serif);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* Force a light theme aesthetic regardless of system setting */
+/* Remove dark-mode overrides so the site background stays white */
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #000000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Neutral, high-contrast typography for a law-firm aesthetic */
+h1, h2, h3, h4 {
+  letter-spacing: -0.01em;
 }
