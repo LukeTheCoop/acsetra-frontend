@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
@@ -19,12 +18,14 @@ export default function Home() {
           pull, source, and flag relevant information for your final review.
         </p>
         <div className="mt-10">
-          <Link
-            href="/demo"
+          <a
+            href="https://calendly.com/joseph-acsetra/30min?month=2025-07"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center rounded-md bg-neutral-900 px-8 py-4 text-white text-base font-medium hover:bg-neutral-800"
           >
             Request Demo
-          </Link>
+          </a>
         </div>
         {/* Testimonials removed per request */}
       </section>
